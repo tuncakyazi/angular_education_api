@@ -14,7 +14,6 @@ router.post('/', function(req, res, next) {
             console.log('ERROR:', error);
             res.sendStatus(404);
         });
-    // res.send('POST request to homepage');
 });
 
 module.exports = router;
