@@ -4,8 +4,7 @@ var db = require('./../postgreSQL');
 
 /* POST home page. */
 router.post('/', function(req, res, next) {
-    // console.log('Got body:', req.body);
-    db.one("INSERT INTO contacts (firstname, lastname, email, message) VALUES ('firstname', 'lastname', 'email', 'message')")
+    db.one(`INSERT INTO contacts (firstname, lastname, email, message) VALUES ('${req.body.firstName}', '${req.body.lastName}', '${req.body.email}', '${req.body.message}')`)
         .then(function (data) {
             console.log(data);
             res.sendStatus(200);
