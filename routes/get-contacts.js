@@ -4,7 +4,7 @@ var db = require('./../postgreSQL');
 
 /* POST home page. */
 router.get('/', function(req, res, next) {
-    db.one(`SELECT * FROM contacts`)
+    db.any(`SELECT * FROM contacts`)
         .then(function (data) {
             if(data)
                 next(data);
